@@ -1,0 +1,87 @@
+Server:
+  port: 8081
+
+spring:
+  application:
+    name: smartshoppingvalley
+  aop:
+    proxy-target-class: true
+
+
+
+  mail:
+    # 发送者邮箱
+    username: wyh3.14@foxmail.com
+    #申请到的授权码
+    password: mxvzgmbxmonrjcbe
+    # 配置 SMTP 服务器地址
+    host: smtp.qq.com
+    # 端口号465或587
+    port: 465
+    protocol: smtps
+    # 默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    # 配置SSL 加密工厂
+    properties:
+      mail:
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+          #表示开启 DEBUG 模式，这样，邮件发送过程的日志会在控制台打印出来，方便排查错误
+          debug: true
+          ssl: true
+
+
+
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/letao?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 4insideidentity
+    druid:
+      validation-query: SELECT 1 FROM DUAL
+      initial-size: 10
+      min-idle: 10
+      max-active: 200
+      min-evictable-idle-time-millis: 300000
+      test-on-borrow: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 30000
+      pool-prepared-statements: true
+      max-open-prepared-statements: 100
+
+mybatis-plus:
+  type-aliases-package: com.smartshoppingvalley.*.entity
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: 1
+      logic-not-delete-value: 0
+
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    jdbc-type-for-null: 'null'
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+    # JWT Configuration
+#  jwt:
+#    secret: 2xDRaUVK13Y0LkMmTg0zIBkrPPO9z3Ch
+#    expiration: 3600
+
+#logging:
+#  config:
+#    classpath: logback.xml
+
+
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: error
+
+letao:
+  path: D:\images\ #图片资源存放位置
+
