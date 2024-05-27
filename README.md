@@ -1,4 +1,4 @@
-![logo](D:\智能购物谷\images\logo.png)
+![logo](https://github.com/RYaNzzZ1/SmartShoppingValley/blob/master/images/logo.png)
 
 # 让您的校园生活多姿多彩！！
 
